@@ -1,0 +1,34 @@
+-To create a new project in django
+django-admin startproject <PROJECT-NAME>
+
+-To start a django server
+python manange.py runserver
+
+- What is manage.py?
+It's a file created by django in every project which is django's command line utility to serve administrative tasks
+
+- What is urls.py?
+It's a file created by django in every project which control routing i.e to specify what views to show on which urls
+It basically redirects url request to a required html page or view
+
+- What is views.py?
+It's a file created by django in every project which controls what view or file to display to the user on request
+
+- What is settings.py?
+It consists of all the configurations of a django project
+
+- How many types of views are there?
+(1) Function based (2) Class based (3) File based
+
+- How to add a new function based path and a view?
+First define a new path for example example/
+Second, inside the views.py, create a new view that you want to redirect using this new path example/
+Your new function inside the views.py file will take a request parameter, and it will return a response. That's how this cycle works.
+    you request something, in return you get a response.
+Lastly, inside the urlpatterns list, add a new path() element.
+    First parameter inside the path() function takes your new path, in our example its example/
+        For example, path('example/')
+    Second parameter is your view, that is your function you've made in the views.py file
+        For example, path('example/', views.example)
+    Last parameter is name of the path. This is used in the case where your path is complicated, name is used to easily identify it
+        For example, path('example/', views.example, name="example")
