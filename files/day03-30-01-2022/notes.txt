@@ -1,0 +1,39 @@
+To let django and database sync with each other,
+we use migrate command. It let database know about the changes (maybe like a merge command)
+--> python manage.py migrate
+
+- Creating an admin user
+If we go to the 'hostname/admin' url, we'll see a login page where an admin can log in access some of the django's
+administrative feature
+So, to login, we need to create a user
+python manage.py createsuperuser
+
+- Apps are basically components
+(1) Built-in components (2) User components
+
+(1) Built-in components are apps made by django such as admin
+(2) User components are apps made by the user such as funds-transfer etc
+        User components aka apps are made using following command:
+            django-admin startapp app-name
+        After creating your app, register it in the settings.py file
+
+- root of your project is the location where the manage.py is. You have to be always at the root
+
+- Creating models
+A model is the single, definitive source of information about your data.
+It contains the essential fields and behaviors of the data you're storing.
+Models are basically entities that are used perfrom CRUD operations with the database
+You don't write queries or create schemas in Django. Instead, you make models that does all the stuff for you
+
+- Makemigration command
+Whenever you update the models.py file, you run two commands in conjunctions. That are,
+python manage.py makemigrations
+python manage.py migrate
+These commands keeps your models and project sync with the database
+
+- Registering your models
+After you have successfully created your model
+Register in the apps local admin file
+
+- There will be models relative to your apps shown in the admin page
+
