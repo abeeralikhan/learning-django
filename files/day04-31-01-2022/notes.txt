@@ -1,0 +1,23 @@
+- We can insert data into our models using django shell also
+To activate django interactive shell:
++ python manage.py shell
+
+- Now, import your models by referencing to the models.py files inside your component
+
++ Model.objects.all() --> To see list of inserted data
++ Model.create(field1=value1, field2=value2, ...) --> To insert new data into the model from shell
+
+- We can put multiple constraints on each field
+
+- Routing & URLS
+When a render a html file, we use the render() method from the django.shortcuts library
+render() method accepts three arguements
+
++ render(request, '/location.html', context_object)
+
+- Templates
+Templates is the folder where all of our html markup will be stored and accessed from
+1) Create a new folder "Templates" in the root directory of your project (where manage.py is)
+And, store your html files in it
+2) Declare templates in the settings.py file
+
