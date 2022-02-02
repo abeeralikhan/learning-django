@@ -1,0 +1,37 @@
+- Templates folder
+Template is the folder where all of our html markup will be stored and accessed from
+1) Create a new folder "Templates" in the root directory of your project (where manage.py is)
+And, store your html files in it
+2) Declare templates in the settings.py file
+    Insert the path to your templates' folder in the DIRS list
+3) Now, use your template by just mentioning its file name and extension while rendering
+
+- Attributes sharing
+
+- Template Inheritance
+We create a base template e.g base.html, and using it, we make other templates
+or, in other words, we extend base.html, and make other templates on top of it.
+
+- How do we perform template inheritance?
+In the base.html file, we create a body section. That body section is replaced by other templates
+Benefit, we don't need to create boilerplate again and again. We just need to create it for base.html
+and, other templates will inherit it.
+
+- Where is it most useful?
+While making a navbar
+Every page will be sharing the same navbar that is on the base page, or can overwrite if want
+Note: We can create multiple blocks
+Example:
+{% block <name_of_the_block> %}
+ // you send data to the base class from here
+{% endblock <name_of_the_block> %}
+
+- include template tag
+We can include external templates in our current template.
+We do this to avoid inheriting base class all the time
+We can create independent html components and include in our current template
+
+Example:
+{% include "example_component.html" %}
+
+Above code will interpolate external templates in your calling template
